@@ -32,6 +32,12 @@ We accept any non-pay walled news article URL or a text submission:
 Download the Legit or bit Folder located in this repo.
 
 Install any requirements with the `requirements.txt` file.
+You can use your package manager to do so, for example if you have pip you can run the command `pip install -r requirements.txt`
+
+Additional set-up: 
+	- `pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib`
+	- `pip install -U pip setuptools wheel`
+	- `python -m spacy download en_core_web_sm`
 
 Install Ngrok at https://ngrok.com/
 
@@ -55,7 +61,7 @@ Copy and paste the forwarding address to the ***Webhook URL for incoming message
 
 Finally scroll down and hit the blue button that says *Update WhatsApp Sender*
   
-Go back to your favorite IDE 💻 and run `main.py`
+Go back to your favorite IDE 💻 and run `py -m uvicorn main:app --reload`
   
 The Ngrok tunnel will be connected to your console and you'll be able to see any and all traffic 🚦 to our code base.
 	
