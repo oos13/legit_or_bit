@@ -6,8 +6,15 @@ Legit or Bit is a fact checking service bot that lives in Whats App. This bot is
 We are powered by the Claim Busters Fact Checking API created by The University of Texas at Arlington. Which scores all user submissions. We also provide similar articles and information for article submissions which is done by contacting the Google Fact Explorer API.  
 
 ## Folder Contents 📁
+ - `Db.py` - Connection to CloudSql, and all operations needed for database operations: such as pulling in data, modifications, and saving
+ - `fin_script_create.py`- Contains all fact checking API calls, data-frame operations for saving query info, and user formatted returns
+- `main.py` - Connections to web hooks, some user formatted response
+- `images.py` - Connection to Cloudinary, and saving image submissions. 
+- `requirments.txt` All dependencies needed for the environment
+	- Additional requirements are located in `main.py`
+- `.env` - Secret keys... please don't leak 
+- **All** `.pem`  **files**  - Keys needed for cloudSQL
 
-xyz(TBD)
 
 ## How to 🤷‍♀️
 #### How to use Legit or Bit as a user:
@@ -35,9 +42,12 @@ Install any requirements with the `requirements.txt` file.
 You can use your package manager to do so, for example if you have pip you can run the command `pip install -r requirements.txt`
 
 Additional set-up: 
-	- `pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib`
-	- `pip install -U pip setuptools wheel`
-	- `python -m spacy download en_core_web_sm`
+
+	 	`pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib`
+	
+	 	`pip install -U pip setuptools wheel`
+	
+	 	`python -m spacy download en_core_web_sm`
 
 Install Ngrok at https://ngrok.com/
 
