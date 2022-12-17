@@ -5,14 +5,18 @@
 Legit or Bit is a fact checking service bot that lives in Whats App. This bot is designed for those who have Meta subsided internet plans. These plans offer extra gibibytes or unlimited data for Meta products **ONLY**. It is unreasonable to expect people without easy and reliable internet access to be meticulous and thorough in verifying the veracity of the information they receive. So this tool offers those who have these plans a way to fact check websites and claims that may be shared to them or they may have themselves; without the risk of overages and charges on their phone plans.
 We are powered by the Claim Busters Fact Checking API created by The University of Texas at Arlington. Which scores all user submissions. We also provide similar articles and information for article submissions which is done by contacting the Google Fact Explorer API.  
 
+This Project was created by Danny Jaramillo and Omar Stevens as their Senior Capstone Project for The City College of New York
+
+**GO BEAVERS**
+
 ## Folder Contents 📁
  - `Db.py` - Connection to CloudSql, and all operations needed for database operations: such as pulling in data, modifications, and saving
- - `fin_script_create.py`- Contains all fact checking API calls, data-frame operations for saving query info, and user formatted returns. Used to run and check API responces
+ - `fin_script_create.py`- Contains all fact checking API calls, data-frame operations for saving query info, and user formatted returns. Used to run and check API responces	*Can be used to test API outputs*
 - `main.py` - Connections to web hooks, some user formatted response. Run to test with tunnel connected.
 - `images.py` - Connection to Cloudinary, and saving image submissions. 
 - `requirments.txt` All dependencies needed for the environment
 	- Additional requirements are located in `main.py`
-- `.env` - Secret keys... please don't leak 
+- `.env` - Secret keys...
 - **Subfolder**
 	- **SSL**  - Keys needed for cloudSQL
 
@@ -35,6 +39,13 @@ We accept any non-pay walled news article URL or a text submission:
 
 
 #### How to use Legit or Bit as a developer: 💻
+*Note: For the following Webhooks must be set from Ngrok inside the Twilio console. They must have the same ip-address from Ngrok.*
+
+*Inside the Twilio console, webhook 1: is for text/url processing* 	`/webhook`
+
+*webhook 2: To accept image submissions*		`/webhook2`
+
+-----------------------------------------------------------------------------------------------------------------
 
 Download the Legit or bit Folder located in this repo.
 
@@ -69,7 +80,7 @@ Copy the Forwarding address
 
 * It should look something like this: 'https://some_numbers_yada_yada.ngrok.io'
 
-Login to our Twilio page and go to: 
+Login to Twilio page and go to: 
 	
 * Messaging in the side bar ➡ Senders ➡ WhatsApp Senders ➡ Scroll down to our WhatsApp number and click it. 🖱
 
@@ -94,9 +105,13 @@ The Ngrok tunnel will be connected to your console and you'll be able to see any
 
 This application is still in testing and production, if you the user or developer messages the number provided above without having the Ngrok tunnel set up, you will recive no output. The tunnel currently is the only way we have connection to our code base.
 
-Images are not accepted at this moment, for the future we want to have that service added to our project. 
+We currently can not process images, for the future we want to have that service added to our project. 
 
-We want to send back to the user information about the image:
+We do accept images, but it will be used for future developments in fact checking them.
+
+Our plan:
+
+Information to send the user about the image:
 		
 		Meta Data
 		
